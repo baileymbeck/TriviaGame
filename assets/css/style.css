@@ -2,8 +2,11 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     /* background: url(../images/hora-de-aventuras-001.jpg); */
     background-color: rgb(127,206,239);
+    font-size: 21px;
+    line-height: 1.7;
 }
 h1{
+    font-size: 57px;
     margin-left: 25%;
     margin-top: 10%;
 }
@@ -12,8 +15,9 @@ h1{
 }
 img{
     float: left;
-    margin: -150px auto auto -8px;
+    margin: -168px auto auto -8px;
 }
 .btn{
     background: rgb(253,187,1);
 }
+
