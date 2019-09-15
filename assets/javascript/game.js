@@ -1,6 +1,6 @@
 // ----- pseudo code -----
 // 7 multi choice questions
-// set timer for 60 seconds
+// set timer for 70 seconds, 10 seconds per question
 //  when answer is selected it changes color and is saved (to be grade when the time finishes)
 
 //  ---- when timer finishes ----
@@ -8,9 +8,6 @@
 //  display correct answer in GREEN
 // display fist bump image in top right
 
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
 
 
 // start game
@@ -19,11 +16,12 @@ function start(){
         console.log(this);
         $("#start").css("display" , "none");
         $("img, #quiz, #submit").css("display" , "inherit");
+        $(".jumbotron").css("margin-bottom", "-6%")
     });
 }
 start();
 
-
+// populate quiz container
 (function() {
     function buildQuiz() {
       // we'll need a place to store the HTML output
