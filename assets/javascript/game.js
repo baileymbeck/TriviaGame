@@ -158,7 +158,7 @@ start();
             correctAnswer: "d"
           },
           {
-            question: ">Who is Jake's girlfriend?",
+            question: "Who is Jake's girlfriend?",
             answers: {
               a: "Tiffany",
               b: "Rabid Squirrel",
