@@ -8,25 +8,25 @@
 //  display correct answer in GREEN
 // display fist bump image in top right
 
-setTimeout( 1000 * 14);
 
 
-function restart(){
+
+function start(){
     $("#start").on("click", function() {
         console.log(this);
         $("#start").css("display" , "none");
         $("img, .container").css("display" , "inherit");
         
     });
-
-    
 }
 
-restart();
+start();
 
-//the img buttons have generated random numbers with a value between 1 - 12 in each box 
 
-// random number for each img box
+
+
+
+//below is referrence code from previous assignment, still familiarizing myself with jquery
 
     $(".btn").on("click", function() {
         var num = parseInt($(this).attr("data-number"));
