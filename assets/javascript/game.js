@@ -160,8 +160,6 @@ start();
             },
             correctAnswer: "d"
           }
-      
-        
     ];
   
     // display quiz right away
@@ -169,4 +167,13 @@ start();
   
     // on submit, show results
     submitButton.addEventListener("click", showResults);
+
+    function restart(){
+        $("#restart").css("display", "inherit");
+        $("#start").css("display" , "none");
+        $("img, #quiz, #submit").css("display" , "none");
+        $(".jumbotron").css("margin-bottom", "-10%")
+    }
+    // time runs out
+    setTimeout(restart, 600)
   })();
