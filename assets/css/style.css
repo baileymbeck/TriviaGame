@@ -4,6 +4,7 @@ body{
     background-color: rgb(127,206,239);
     font-size: 21px;
     line-height: 1.7;
+    margin: 0 auto;
 }
 h1{
     font-size: 57px;
@@ -20,9 +21,10 @@ img{
 .btn{
     background: rgb(253,187,1);
 }
+
 #snail{
-    margin: 0;
-    width: 100%;
+    margin: -8px;
+    width: 155%;
     height: 100%;
 }
 

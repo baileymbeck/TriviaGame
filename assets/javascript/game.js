@@ -8,4 +8,37 @@
 //  display correct answer in GREEN
 // display fist bump image in top right
 
+function restart(){
+    
 
+    
+}
+
+restart();
+
+//the img buttons have generated random numbers with a value between 1 - 12 in each box 
+
+// random number for each img box
+
+    $(".btn").on("click", function() {
+        var num = parseInt($(this).attr("data-number"));
+        collectedNumber = collectedNumber + num;
+        console.log(collectedNumber);
+        $("#collectedNumber").text(collectedNumber);
+
+        if(collectedNumber === randomNumber){
+            wins++;
+            $("#wins").text(wins);
+            // append the modal
+            restart()
+
+
+        } else if(collectedNumber > randomNumber){
+            losses++;
+            $("#losses").text(losses);
+            // append the modal
+            restart()
+
+        }
+
+    });
