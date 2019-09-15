@@ -6,13 +6,14 @@ body{
     line-height: 1.7;
     margin: 0 auto;
 }
-h1{
+.jumbotron{
+    text-align: center;
     font-size: 57px;
-    margin-left: 25%;
-    margin-top: 10%;
+    background-color: rgb(127,206,239);
+
 }
 .container{
-    margin-left: 25%;
+    margin-left: 33%;
 }
 img{
     float: left;

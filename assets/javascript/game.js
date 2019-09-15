@@ -8,10 +8,15 @@
 //  display correct answer in GREEN
 // display fist bump image in top right
 
+setTimeout( 1000 * 14);
+
+
 function restart(){
     $("#start").on("click", function() {
         console.log(this);
         $("#start").css("display" , "none");
+        $("img, .container").css("display" , "inherit");
+        
     });
 
     
