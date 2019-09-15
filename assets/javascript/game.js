@@ -8,16 +8,33 @@
 //  display correct answer in GREEN
 // display fist bump image in top right
 
-
+var time = 60;
 
 // start game
 function start(){
     $("#start").on("click", function() {
-        console.log(this);
+    
         $("#start").css("display" , "none");
         $("img, #quiz, #submit").css("display" , "inherit");
         $(".jumbotron").css("margin-bottom", "-6%")
+
+        var sec = 10;
+        var time = setInterval(myTimer, 1000);
+
+        function myTimer() {
+            document.getElementById('time').innerHTML = sec + " left";
+            sec--;
+            if (sec == -1) {
+                clearInterval(time);
+            $("#restart").css("display" , "inherit");
+            $("img, #quiz, #submit").css("display" , "none");
+            $(".jumbotron").css("margin-bottom", "-10%");
+            $("#results").css("margin-left", "41%");
+            $("results").innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            }
+        }
     });
+
 }
 start();
 
@@ -168,12 +185,5 @@ start();
     // on submit, show results
     submitButton.addEventListener("click", showResults);
 
-    function restart(){
-        $("#restart").css("display", "inherit");
-        $("#start").css("display" , "none");
-        $("img, #quiz, #submit").css("display" , "none");
-        $(".jumbotron").css("margin-bottom", "-10%")
-    }
-    // time runs out
-    setTimeout(restart, 600)
+    
   })();
