@@ -9,7 +9,10 @@
 // display fist bump image in top right
 
 function restart(){
-    
+    $("#start").on("click", function() {
+        console.log(this);
+        $("#start").css("display" , "none");
+    });
 
     
 }
