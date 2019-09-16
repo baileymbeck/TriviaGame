@@ -8,6 +8,10 @@
 //  display correct answer in GREEN
 // display fist bump image in top right
 
+
+
+// why do I have to click submit for the text to show up?
+
 var time = 60;
 
 // start game
@@ -28,15 +32,45 @@ function start(){
                 clearInterval(time);
             $("#restart").css("display" , "inherit");
             $("img, #quiz, #submit").css("display" , "none");
-            $(".jumbotron").css("margin-bottom", "-10%");
-            $("#results").css("margin-left", "41%");
             $("results").innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            $("#results").css("margin-left", "41%");
+            $(".jumbotron").css("margin-bottom", "-10%");
+            
             }
         }
     });
 
 }
 start();
+
+// restart game
+
+function restart(){
+    $("#restart").on("click", function() {
+    
+        $("#restart").css("display" , "none");
+        $("img, #quiz, #submit").css("display" , "inherit");
+        $(".jumbotron").css("margin-bottom", "-6%")
+
+        var sec = 20;
+        var time = setInterval(myTimer, 1000);
+
+        function myTimer() {
+            document.getElementById('time').innerHTML = sec + " left";
+            sec--;
+            if (sec == -1) {
+                clearInterval(time);
+            $("#restart").css("display" , "inherit");
+            $("img, #quiz, #submit").css("display" , "none");
+            $("#results").css("margin-left", "41%");
+            $(".jumbotron").css("margin-bottom", "-10%");
+            $("results").innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            }
+        }
+    });
+
+}
+restart();
 
 // populate quiz container
 (function() {
