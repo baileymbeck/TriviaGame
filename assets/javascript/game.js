@@ -24,7 +24,7 @@ function start(){
         $("img, #quiz, #submit").css("display" , "inherit");
         $(".jumbotron").css("margin-bottom", "-6%")
 
-        var sec = 10;
+        var sec = 60;
         var time = setInterval(myTimer, 1000);
 
         function myTimer() {
@@ -57,7 +57,7 @@ function restart(){
         $("img, #quiz, #submit").css("display" , "inherit");
         $(".jumbotron").css("margin-bottom", "-6%")
 
-        var sec = 20;
+        var sec = 60;
         var time = setInterval(myTimer, 1000);
 
         function myTimer() {
