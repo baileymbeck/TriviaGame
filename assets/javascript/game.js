@@ -11,8 +11,10 @@
 
 
 // why do I have to click submit for the text to show up?
+// clear inputs, restrict to one answer after submit
 
 var time = 60;
+let numCorrect = 0;
 
 // start game
 function start(){
@@ -30,9 +32,10 @@ function start(){
             sec--;
             if (sec == -1) {
                 clearInterval(time);
+
             $("#restart").css("display" , "inherit");
             $("img, #quiz, #submit").css("display" , "none");
-            $("results").innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            $("#results").html(`${numCorrect} out of ${myQuestions.length}`);
             $("#results").css("margin-left", "41%");
             $(".jumbotron").css("margin-bottom", "-10%");
             
@@ -47,7 +50,9 @@ start();
 
 function restart(){
     $("#restart").on("click", function() {
-    
+        $("input:checked").each(function(i,element){
+            $(element).prop("checked",false);
+        })
         $("#restart").css("display" , "none");
         $("img, #quiz, #submit").css("display" , "inherit");
         $(".jumbotron").css("margin-bottom", "-6%")
@@ -60,11 +65,11 @@ function restart(){
             sec--;
             if (sec == -1) {
                 clearInterval(time);
-            $("#restart").css("display" , "inherit");
-            $("img, #quiz, #submit").css("display" , "none");
-            $("#results").css("margin-left", "41%");
-            $(".jumbotron").css("margin-bottom", "-10%");
-            $("results").innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+                $("#restart").css("display" , "inherit");
+                $("img, #quiz, #submit").css("display" , "none");
+                $("#results").css("margin-left", "41%");
+                $(".jumbotron").css("margin-bottom", "-10%");
+                $("#results").html(`${numCorrect} out of ${myQuestions.length}`);
             }
         }
     });
@@ -73,7 +78,7 @@ function restart(){
 restart();
 
 // populate quiz container
-(function() {
+
     function buildQuiz() {
       // we'll need a place to store the HTML output
       const output = [];
@@ -111,7 +116,6 @@ restart();
       const answerContainers = quizContainer.querySelectorAll(".answers");
   
       // keep track of user's answers
-      let numCorrect = 0;
   
       // for each question...
       myQuestions.forEach((currentQuestion, questionNumber) => {
@@ -220,4 +224,4 @@ restart();
     submitButton.addEventListener("click", showResults);
 
     
-  })();
+
