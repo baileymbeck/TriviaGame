@@ -1,2 +1,4 @@
 # TriviaGame
-Required game for homework 5
+letter guess game
+
+https://baileymbeck.github.io/TriviaGame/
